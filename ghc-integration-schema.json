@@ -18,7 +18,7 @@
       "default": {
         "configMode": "AUTO",
         "baseBranches": [],
-        "configExternalUrl": ""
+        "configExternalURL": ""
       },
       "properties": {
         "configMode": {
@@ -31,7 +31,7 @@
           ],
           "default": "AUTO"
         },
-        "configExternalUrl": {
+        "configExternalURL": {
           "description": "The external link value for \"configMode\". Required if configMode = \"EXTERNAL\"\n(Integration Default: \"\")",
           "type": "string",
           "default": ""
@@ -172,7 +172,7 @@
           "type": "number",
           "default": 10
         },
-        "configExternalUrl": {
+        "configExternalURL": {
           "description": "The url where where the external .mendsastcli-config.json file is hosted.\nMust be in URL format - supports http, https, and ftp protocols.",
           "type": "string",
           "pattern": "(http|https|ftp)://.+",
@@ -188,7 +188,7 @@
         "imageTracing": {
           "enableImageTracingPR": false,
           "addRepositoryCoordinates": false,
-          "addDockerFilePath": false
+          "addDockerfilePath": false
         }
       },
       "properties": {
@@ -202,7 +202,7 @@
               "type": "boolean",
               "default": false
             },
-            "addDockerFilePath": {
+            "addDockerfilePath": {
               "description": "Add the relative path of the Dockerfile within the repository as a label in the Dockerfile.\n(Integration Default: false)",
               "type": "boolean",
               "default": false
@@ -470,7 +470,7 @@
     "remediateSettings": {
       "description": "Define settings for remediate/renovate.",
       "type": "object",
-      "additionalProperties": false,
+      "$ref": "https://docs.renovatebot.com/renovate-schema.json",
       "required": [
         "workflowRules"
       ],
@@ -724,10 +724,10 @@
         "properties": {
           "scanSettings": {
             "required": [
-              "configExternalUrl"
+              "configExternalURL"
             ],
             "properties": {
-              "configExternalUrl": {
+              "configExternalURL": {
                 "pattern": ".+"
               }
             }
@@ -1149,10 +1149,10 @@
         "properties": {
           "scanSettings": {
             "required": [
-              "configExternalUrl"
+              "configExternalURL"
             ],
             "properties": {
-              "configExternalUrl": {
+              "configExternalURL": {
                 "pattern": "(http|https).+"
               }
             }
